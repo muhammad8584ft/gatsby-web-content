@@ -4,6 +4,24 @@ date: "2015-05-28T22:40:32.169Z"
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
 
+<div id="pdfViewer"></div>
+
+<script src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("drive-viewer", "1");
+
+  function loadPDF(fileId) {
+    var pdfViewer = new google.drive.viewer.PdfViewer(document.getElementById('pdfViewer'));
+    pdfViewer.setViewerUrl('https://drive.google.com/file/d/' + fileId + '/preview');
+    pdfViewer.setPdfUrl('https://drive.google.com/uc?export=download&id=' + fileId);
+    pdfViewer.open();
+  }
+
+  // Panggil fungsi loadPDF dengan ID file PDF yang ingin ditampilkan
+  loadPDF('your_file_id');
+</script>
+
+
 Far far away, behind the word mountains, far from the countries Vokalia and
 Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
 right at the coast of the Semantics, a large language ocean. A small river named
